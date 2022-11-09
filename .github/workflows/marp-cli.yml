@@ -1,3 +1,9 @@
+name: Publish GitHub Pages
+on:
+  push:
+    branches:
+      - main
+      
 - uses: actions/checkout@v2
 
 - name: Convert Markdown into HTML and PDF
