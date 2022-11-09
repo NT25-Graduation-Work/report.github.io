@@ -1,4 +1,5 @@
-name: Publish GitHub Pages
+
+name: Publish example slides to GitHub Pages
 on:
   push:
     branches:
@@ -7,15 +8,11 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v2
-
-      - name: Convert Markdown into HTML and PDF
-        uses: KoharaKazuya/marp-cli-action@v2
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./docs
