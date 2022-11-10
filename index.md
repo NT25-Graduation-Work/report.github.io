@@ -1,7 +1,8 @@
 ---
 marp: true
-<!-- size: 4:3 -->
+size: 4:3
 theme: dracula
+footer: @2022 唐澤克幸
 ---
 
 # 学内チャットツール
