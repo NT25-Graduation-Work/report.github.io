@@ -1,12 +1,14 @@
 ---
 marp: true
-size: 4:3
-theme: dracula
-footer: @2022 唐澤克幸
+theme: academic
+backgroundImage: url('https://marp.app/assets/hero-background.svg')
+footer: @2022 [Katsuyuki-Karasawa](https://github.com/Katsuyuki-Karasawa)
 ---
+<!-- _class: lead -->
 
 # 学内チャットツール
 ## NT25-A 6班
+
 
 K021C1258/阿部拓海  
 K021C1260/唐澤克幸  
@@ -15,9 +17,23 @@ K021C1259/大槻諒
 K021C1248/加藤好太  
 K021C1286/小出佑希  
 
+
+![bg opacity : 100% auto](https://github.com/marp-team/marp/raw/main/marp.png)
+
+---
+<!-- _header: 先行研究 -->
+### Global
+[![vector-im/element-web - GitHub](https://gh-card.dev/repos/vector-im/element-web.svg)](https://github.com/vector-im/element-web)
+[![mattermost/mattermost-server - GitHub](https://gh-card.dev/repos/mattermost/mattermost-server.svg)](https://github.com/mattermost/mattermost-server)
+
+### 国産
+[![traPtitech/traQ - GitHub](https://gh-card.dev/repos/traPtitech/traQ.svg)](https://github.com/traPtitech/traQ)
+
+
 ---
 
-### Why
+
+# Why
 
 1. 学内のチャットツール(教師用/生徒用)がバラバラすぎる
 2. 既存のシステムだと外部に依存しすぎている
@@ -36,16 +52,16 @@ K021C1286/小出佑希
 ---
 
 # 既存システムでは外部依存が激しい
-* なぜかGoogle Workspaceアカウントを割り当てているにもかかわらず、Googleで統一されていない
-* もし、外部のツールの場合なにか問題が発生した際のバックアップとなるツールがない
-* 追跡や情報収集を嫌う人は一定数いるという部分の解消(すべてOSSとして作り上げる)
+* なぜかGoogle Workspaceが活用できていない
+* もし、外部のツールの場合なにか問題が発生した際のバックアップがない
+* 追跡や情報収集を嫌う人は一定数いるという部分の解消(degoogle)
 ---
 
 # Chatworkが改悪
 ## (そもそも商用利用で無償利用はどうなのか)
-* オンプレミス or クラウドで自分で保守するため、インスタンスを飛ばしたりしなけれは問題ない(インシデントが発生しない可能性がないわけではない)
+* オンプレミス or クラウドで自分での保守
+(インシデントが発生しない可能性がないわけではない)
 * ログは残る
-* API周りをしっかり作る。
 ---
 
 # 学内で保守できる環境がある
@@ -76,11 +92,38 @@ K021C1286/小出佑希
 # What
 1. チャンネルの管理
 2. 拡張性(API周りやカスタムテーマを扱えるようにする)
-3. 軽量・シンプルかつ誰でも扱えるようなUI
-4. Googleアカウントを用いたログイン
-5. 学校やグループワークに特化したアプリ
-AWSを用いた
-
+3. 軽量・シンプルかつ誰でも扱えるようなUI(React.JS Socket.IO)
+4. Google OAuth
+6. AWS EC2を採用
 
 ---
+
+# チャンネルの管理
+* チャンネルの追加
+* チャンネルの削除
+* チャンネルの権限設定
+etc...
+
+各種ツールにも実装されてる機能を実装する
+
 ---
+
+# 拡張性
+* 軽量な動作を目指してTailwindを採用
+* Socket.IOでリアルタイム双方向通信が可能
+* Node.jsによる実装のため拡張性が高い
+* OSSのため実装されている機能の透明性が高い
+
+---
+
+# Google OAuth
+* Passportを使用した認証
+* 
+
+---
+
+# AWS EC2を採用
+* デプロイ専用
+* オンプレミスでの保守は人件費が大きい
+* EC2以外にも採用しやすい
+
