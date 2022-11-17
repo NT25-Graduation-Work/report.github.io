@@ -21,29 +21,15 @@ style:
 ![bg contain opacity:20%](https://github.com/marp-team/marp/raw/main/marp.png)
 
 ---
-
+<!-- _class: lead -->
 <!-- _header: 先行開発 -->
+[SlackのAlternativeなOSS](https://alternativeto.net/software/slack/)
 
-<div style="text-align:center;"> 
-    <a href="https://github.com/vector-im/element-web">
-        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/vector-im/element-web.png" width="460px">
-    </a>
-    <a href="https://github.com/mattermost/mattermost-server">
-        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/mattermost/mattermost-server.png" width="460px">
-    </a>
-    <a href="https://github.com/traPtitech/traQ">
-        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/traPtitech/traQ.png" width="460px">
-    </a>
-    <a href="https://github.com/zulip/zulip">
-        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/zulip/zulip.png" width="460px">
-    </a>
-    <a href="https://github.com/RocketChat/Rocket.Chat">
-        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/RocketChat/Rocket.Chat.png" width="460px">
-    </a>
-    <a href="https://github.com/fosscord/fosscord">
-        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/fosscord/fosscord.png" width="460px">
-    </a>
-</div> 
+|                                                                                                                                                         |                                                                                                                                       | 
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------- | 
+| [![vector-im/element-web - GitHub](https://gh-card.dev/repos/vector-im/element-web.svg#center)](https://github.com/vector-im/element-web)               | [![zulip/zulip - GitHub](https://gh-card.dev/repos/zulip/zulip.svg)](https://github.com/zulip/zulip)                                  | 
+| [![mattermost/mattermost-server - GitHub](https://gh-card.dev/repos/mattermost/mattermost-server.svg)](https://github.com/mattermost/mattermost-server) | [![RocketChat/Rocket.Chat - GitHub](https://gh-card.dev/repos/RocketChat/Rocket.Chat.svg)](https://github.com/RocketChat/Rocket.Chat) | 
+| [![traPtitech/traQ - GitHub](https://gh-card.dev/repos/traPtitech/traQ.svg)](https://github.com/traPtitech/traQ)                                        | [![fosscord/fosscord - GitHub](https://gh-card.dev/repos/fosscord/fosscord.svg)](https://github.com/fosscord/fosscord)                | 
 
 ---
 
