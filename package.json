@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx marp --html --server .",
-    "build": "npx marp --theme-set dracula.css --html -o ./docs/index.html index.md"
+    "dev": "marp --html --server .",
+    "theme": "marp --theme-set dracula.css --html -o ./docs/index.html index.md"
   },
   "repository": {
     "type": "git",

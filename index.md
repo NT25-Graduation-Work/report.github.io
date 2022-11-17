@@ -1,39 +1,56 @@
 ---
 marp: true
 theme: academic
-backgroundImage: url('https://marp.app/assets/hero-background.svg')
 footer: @2022 [Katsuyuki-Karasawa](https://github.com/Katsuyuki-Karasawa)
+paginate: true
+style:
+    
 ---
 <!-- _class: lead -->
 
 # 学内チャットツール
 ## NT25-A 6班
 
+1. K021C1258/阿部 拓海  
+2. K021C1260/唐澤 克幸  
+3. K021C1252/松本 智紀  
+4. K021C1259/大槻 諒
+5. K021C1248/加藤 好太  
+6. K021C1286/小出 佑希  
 
-K021C1258/阿部拓海  
-K021C1260/唐澤克幸  
-K021C1252/松本智紀  
-K021C1259/大槻諒  
-K021C1248/加藤好太  
-K021C1286/小出佑希  
-
-
-![bg opacity : 100% auto](https://github.com/marp-team/marp/raw/main/marp.png)
-
----
-<!-- _header: 先行研究 -->
-### Global
-[![vector-im/element-web - GitHub](https://gh-card.dev/repos/vector-im/element-web.svg)](https://github.com/vector-im/element-web)
-[![mattermost/mattermost-server - GitHub](https://gh-card.dev/repos/mattermost/mattermost-server.svg)](https://github.com/mattermost/mattermost-server)
-
-### 国産
-[![traPtitech/traQ - GitHub](https://gh-card.dev/repos/traPtitech/traQ.svg)](https://github.com/traPtitech/traQ)
-
+![bg contain opacity:20%](https://github.com/marp-team/marp/raw/main/marp.png)
 
 ---
 
+<!-- _header: 先行開発 -->
 
-# Why
+<div style="text-align:center;"> 
+    <a href="https://github.com/vector-im/element-web">
+        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/vector-im/element-web.png" width="460px">
+    </a>
+    <a href="https://github.com/mattermost/mattermost-server">
+        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/mattermost/mattermost-server.png" width="460px">
+    </a>
+    <a href="https://github.com/traPtitech/traQ">
+        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/traPtitech/traQ.png" width="460px">
+    </a>
+    <a href="https://github.com/zulip/zulip">
+        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/zulip/zulip.png" width="460px">
+    </a>
+    <a href="https://github.com/RocketChat/Rocket.Chat">
+        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/RocketChat/Rocket.Chat.png" width="460px">
+    </a>
+    <a href="https://github.com/fosscord/fosscord">
+        <img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/fosscord/fosscord.png" width="460px">
+    </a>
+</div> 
+
+---
+
+
+<!-- header: Why -->
+
+# なぜ作ろうとしたか
 
 1. 学内のチャットツール(教師用/生徒用)がバラバラすぎる
 2. 既存のシステムだと外部に依存しすぎている
@@ -49,19 +66,22 @@ K021C1286/小出佑希
 * 管理がしづらい
 * 教員ごとにツールが違うせいで連絡が取りづらい
 * classroomでしか反応してくれない教員がいるため非常に連絡がしづらい
+
 ---
 
 # 既存システムでは外部依存が激しい
 * なぜかGoogle Workspaceが活用できていない
 * もし、外部のツールの場合なにか問題が発生した際のバックアップがない
 * 追跡や情報収集を嫌う人は一定数いるという部分の解消(degoogle)
+
 ---
 
 # Chatworkが改悪
 ## (そもそも商用利用で無償利用はどうなのか)
 * オンプレミス or クラウドで自分での保守
 (インシデントが発生しない可能性がないわけではない)
-* ログは残る
+* 一定期間経過するとログが残らなくなる(40日)
+* 広告やメールへの通知、そもそもの機能面の問題
 ---
 
 # 学内で保守できる環境がある
@@ -88,13 +108,15 @@ K021C1286/小出佑希
 * 誰が負担するのかという問題点がある
 　
 ---
-
-# What
+<!-- header: What -->
+# これはなに
 1. チャンネルの管理
 2. 拡張性(API周りやカスタムテーマを扱えるようにする)
-3. 軽量・シンプルかつ誰でも扱えるようなUI(React.JS Socket.IO)
+3. 軽量・シンプルかつ誰でも扱えるようなUIとサーバー(React.JS Socket.IO)
 4. Google OAuth
 6. AWS EC2を採用
+
+**かつOSSなチャットツール**
 
 ---
 
@@ -117,8 +139,9 @@ etc...
 ---
 
 # Google OAuth
-* Passportを使用した認証
-* 
+* Passportを使用した実装
+* Google Workspaceアカウントの活用
+* 実装が複雑ではない
 
 ---
 
