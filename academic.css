@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 :root {
-  --color-background: #fff;
-  --color-foreground: #333;
-  --color-highlight: #800000;
+  --color-background: #16212c;
+  --color-foreground: #ffffff;
+  --color-highlight: #1d9bf0;
 }
 
 section {
@@ -29,46 +29,46 @@ ul ul {
 }
 
 section.lead h1 {
-  color: #800000;
+  color: #1d9bf0;
   text-align: left;
 }
 section.lead h1 strong {
-  -webkit-text-stroke: 1px #800000;
+  -webkit-text-stroke: 1px #1d9bf0;
 }
 section.lead h2 {
-  color: #800000;
+  color: #1d9bf0;
   text-align: left;
 }
 section.lead h2 strong {
-  -webkit-text-stroke: 1px #800000;
+  -webkit-text-stroke: 1px #1d9bf0;
 }
 section.lead h3 {
-  color: #800000;
+  color: #1d9bf0;
   text-align: left;
 }
 section.lead h3 strong {
-  -webkit-text-stroke: 1px #800000;
+  -webkit-text-stroke: 1px #1d9bf0;
 }
 section.lead h4 {
-  color: #800000;
+  color: #1d9bf0;
   text-align: left;
 }
 section.lead h4 strong {
-  -webkit-text-stroke: 1px #800000;
+  -webkit-text-stroke: 1px #1d9bf0;
 }
 section.lead h5 {
-  color: #800000;
+  color: #1d9bf0;
   text-align: left;
 }
 section.lead h5 strong {
-  -webkit-text-stroke: 1px #800000;
+  -webkit-text-stroke: 1px #1d9bf0;
 }
 section.lead p {
   text-align: right;
 }
 
 header {
-  background-color: #800000;
+  background-color: #1d9bf0;
   color: #fff;
   font-size: 1em;
   font-weight: 700;
