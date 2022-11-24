@@ -114,7 +114,7 @@ header: 先行開発(Slack Alternative)
 　
 ---
 <!-- header: What -->
-# これはなに
+# 機能概要
 1. チャンネルの管理
 2. 拡張性(API周りやカスタムテーマを扱えるようにする)
 3. 軽量・シンプルかつ誰でも扱えるようなUIとサーバー(React.JS Socket.IO)
