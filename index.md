@@ -3,11 +3,6 @@ marp: true
 theme: academic
 paginate: true
 ---
-<!-- _class: lead -->
-# お手元の端末で閲覧が可能です
-![center](./images/qrcode_nt25-graduation-work.github.io.png)
-
----
 
 <!--_class: lead-->
 
@@ -96,11 +91,11 @@ header: 先行開発(Slack Alternative)
 ---
 
 # ファイル周りの管理
-- GDriveをベースにしているが、ChatworkやSlackなどで扱いが違う
 - ブラウザ内でプレビュー対応などがないとDLが必要
 - 教員によってはClassroomオンリーでファイルを投稿してくることも(5GB超のLinuxイメージなど)
-- 紙媒体が排除されない原因の一環
-
+    - 紙媒体が排除されない原因の一環
+- 一定のファイルサイズを受け入れない
+- オープンソースなどのファイルを再配布する際のライセンス違反がみられる
 ---
 
 # 料金体系
@@ -178,25 +173,20 @@ etc...
     - npmからyarnへ移行(依存関係)
 
 ---
+![bg center: 85%](./images/schedule.png)
+---
 
+---
 - サンプルは問題なく動かすことができた
 - バージョン管理が難しく、マイナーバージョンへのアップデートですら苦しめられた
     - 古いバージョンを使い続けるのはセキュリティ上の問題になりかねないので慎重に行う
 - 現在は`package.json`に記載があるバージョンのパッチでやり繰りしている
-- サンプルの画面は次ページ
+- サンプルの動作
 <!-- 実際に動かしておく -->
 
 ---
 
-![center h:550](./images/login.png)
-
----
-
-![bg 90%](https://raw.githubusercontent.com/lucasmrl/chat-app/master/screenshot.png)
-
----
-
-![bg center: 85%](./images/schedule.png)
+# 実際に動かしてみる
 
 ---
 
@@ -218,7 +208,7 @@ header: 作業分担
 -->
 - 大まかにフロントエンドとバックエンドだが、フレキシブルに
     - あくまで小規模のため
-- Pull Reacestは唐澤がレビュー
+- Pull Requestは唐澤がReview
     - 独断専行にならないことを心掛ける
 - issueを投げて、みんなで解決するスタイルが望ましい
     - 根幹はNode.jsなのでバックエンドでもフロントエンドでも応用できる
