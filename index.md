@@ -49,8 +49,12 @@ _header: 先行開発(Slack Alternative)
 - チャット
 - 一時的なアカウント
     - 認証を実装していない
-    - SQLiteなど
-
+        - 後々個人プロジェクトとして進める
+- すべてのコンポーネントがオープンソース
+- 軽量
+- 複数言語対応(react-i18next)
+- テーマ切替
+    - 後々
 
 ---
 <!-- header: 技術スタック -->
@@ -86,175 +90,100 @@ _header: 先行開発(Slack Alternative)
 
 ---
 
-# フロントエンド
-- React
-    - 無難なフロントエンド
-    - Next.jsではない理由
-        - jsx記法がネック
-        - Next.js13での破壊的変更
+## フロントエンド
+### React
+- 無難なフロントエンド
+- Next.jsではない理由
+    - jsx記法がネック
+    - Next.js13での破壊的変更
 
-- TailwindCSS
-    - いわずもがな知られたCSSフレームワーク
+### TailwindCSS
+- いわずもがな知られたCSSフレームワーク
     - コーディングのしやすさを重視
-        - カスタマイズ性が豊富
 
 ---
 
-- daisyUI
-    - TailwindCSS用のフレームワーク
+## daisyUI
+- TailwindCSS用のフレームワーク
     - Tailwindの可読性の欠点を改善できる
-        - テーマなどで細かく悩む必要性が少ない
-    - Tailwindの良い点が殺されていない
-    - 後々のテーマ切り替えの機能などの実装がしやすい
+    - テーマなどで細かく悩む必要性が少ない
+- Tailwindの良い点が殺されていない
+    - Tailwind用のプロファイルの様な使い方ができるので書きやすい
+- 後々のテーマ切り替えの機能などの実装がしやすい
+- モダンなデザイン
+- 公式でコンポーネント集がそろっている
+---
+
+<!--_header: TailwindCSS vs daisyUI -->
+![center](./images/tailwindvsdaisy.png)
 
 ---
 
-<script src="https://gist.github.com/Katsuyuki-Karasawa/982137ad804ac7119ed47ee46999cf1a.js"></script>
-
----
-
-# ファイル周りの管理
-- ブラウザ内でプレビュー対応などがないとDLが必要
-- 教員によってはClassroomオンリーでファイルを投稿してくることも(5GB超のLinuxイメージなど)
-    - 紙媒体が排除されない原因の一環
-- 一定のファイルサイズを受け入れない
-- オープンソースなどのファイルを再配布する際のライセンス違反がみられる
----
-
-# 料金体系
-- 無料で使おうとする教員がほとんどのため、ツールが分散しすぎている
-- 海外のツールが多いため、日本円での内課金にはそれなりの追加コスト
-    - 国内は...(よくてChatwork)
-- 誰が負担するのかという問題点
-    - 生徒に複数のプラン契約をさせるのは現実的ではない
-- フリープランのような体制が突如切られる可能性
-    - 今回のChatworkは実質的なフリープラン打ち切り
-　
----
-<!-- header: What -->
-# 機能概要
-1. チャンネルの管理
-2. 拡張性(API周りやカスタムテーマを扱えるようにする)
-3. 軽量・シンプルかつ誰でも扱えるようなUIとサーバー(React.JS Socket.IO)
-4. Google OAuth
-6. AWS EC2を採用
-
-**があり、かつOSSなチャットツール**
-
----
-
-# チャンネルの管理
-- チャンネルの追加
-- チャンネルの削除
-- チャンネルの権限設定
-- 音声チャット
-etc...
-
-各種ツールにも実装されてる機能を実装する
-
----
-
-# 拡張性
-- コンパクトな動作を目指してTailwindを採用
-- Socket.IOでリアルタイム双方向通信が可能
-- Node.jsによる実装のため拡張性が高い
-- OSSのため実装されている機能の透明性が高い
-    - マルウェアなどの心配性を減らすことができる
-- 実装したい機能があればそれを望む本人が実装できる
-    - そこからさらに自分でカスタマイズしてホスティングも可能
-
----
-
-# Google OAuth
-- Passportを使用した実装
-- Google Workspaceアカウントの活用
-    - 学内でもっとも使用されるので組み込みたい
-- 実装が複雑ではない
-
-> 現在のところは最後に実装する想定なので、後々実装を変更する可能性がある
----
-
-# AWSを採用
-- デプロイ専用
-- オンプレミスでの保守は人件費が大きい
-    - オンプレミスは今回は想定しない
-    - リソース不足も懸念
-- EC2以外にも採用しやすい
-- GCPも想定した
-    - 今回は決済面で諦めた
-
----
-
-<!-- header: スケジュール -->
+<!-- header: 進捗 -->
 # 現在
-- ベースとなるツールの動作確認といくつかの機能追加
+- いくつかの機能追加
 - 古い依存関係のアップデート
     - 完了
     - `npm-check-updates`を使用
 - クライアントとサーバーのリポジトリの切り分け
     - 完了
     - npmからyarnへ移行(依存関係)
-
----
-![bg center: 85%](./images/schedule.png)
 ---
 
----
-- サンプルは問題なく動かすことができた
-- バージョン管理が難しく、マイナーバージョンへのアップデートですら苦しめられた
-    - 古いバージョンを使い続けるのはセキュリティ上の問題になりかねないので慎重に行う
-- 現在は`package.json`に記載があるバージョンのパッチでやり繰りしている
-- サンプルの動作
+## いくつかの機能追加
+- UIの改修を行いました
+    - Tailwindが古かったのでバージョンもついでに
+    - daisyUIを採用し、デザインの統一感を
+- i18n
+    - 国際化に対応
+    - react-18nextを採用
+        - 翻訳する対象は多くはないので後々
+- コードの最適化
+    - 冗長なコードを修正
 <!-- 実際に動かしておく -->
+---
+
+## 古い依存関係のアップデート
+- 結局バグ修正が一番作業として多い
+    - サーバー側はコードが少量だったので少しの改修でなんとか済んだ
+- フロントエンド
+    - 元のコードがTailwindCSSがPostCSS8に切替わる時期だった
+        - そのため`postcss7-compat`だったりなどのdaisyUI採用の弊害が大きかった
+    - TailwindをPostCSS8対応したものを使うために`react`/`react-dom`を含む計10個近くの依存関係を修復する必要があった
+    - 結果としては`tailwind.config.js`が`darkMode: media`にすると動かなくなるというバグを抱えているが、`false`にし、見なかったことにした
 
 ---
 
+## クライアントとサーバーの切り分け
+コードをそれぞれ同時に管理するのは非常に危険
+- repoを分けた
+    - その結果かなり環境の構築が面倒になった
+- 保守はやりやすくなった(主に`git push`時)
+
+
+これのメリットを維持したまま改善する方法を考えた結果、`git submodule`を使うことにした  
+
+![center h:120](./images/submodule.png)
+
+
+---
 # 実際に動かしてみる
 
----
-
-# 今後
-- バグの修正(既知の問題をissueとして挙げる)
-- クライアントの翻訳(`react-i18next`)
-- UIと追加機能の実装
-- デプロイ先の選定
-- CIでのデプロイの実装
-- ドメイン取得
-- バックエンドに集中し、クライアントやサーバーは既存のSlack Altを採用することも視野
 
 ---
 
-<!--
-color: white
-_class: lead
-header: 作業分担
--->
-- 大まかにフロントエンドとバックエンドだが、フレキシブルに
-    - あくまで小規模のため
-- Pull Requestは唐澤がReview
-    - 独断専行にならないことを心掛ける
-- issueを投げて、みんなで解決するスタイルが望ましい
-    - 根幹はNode.jsなのでバックエンドでもフロントエンドでも応用できる
-- GitHubを最大限活用する
-    - これによりいつでもどこでも開発ができる
-    - 誰がどのように変更を行ったかが追跡しやすい
+# 採用技術
 
----
-<!--
-header: 採用技術
- -->
-
-[GitHub](https://github.com)
 [server](https://github.com/NT25-Graduation-Work/chat-app-server)
-└── [`Socket.IO`](https://socket.io) - WebSocketでの双方向通信
-[client](https://github.com/NT25-Graduation-Work/chat-app-client)
-├── `Socket.IO`
-├── [`React.js`](https://ja.reactjs.org) - WebアプリでのUI構築
-└── [`Tailwind CSS`](https://tailwindcss.com) - CSSフレームワーク
+├── [`Socket.IO`](https://socket.io) - WebSocketでの双方向通信
+
+└── [client](https://github.com/NT25-Graduation-Work/chat-app-client) サブモジュール化
+    ├── [`React`](https://ja.reactjs.org) - WebApp構築
+    ├── [`TailwindCSS`](https://tailwindcss.com) - CSSフレームワーク
+    └── [`daisyUI`](https://daisyui.com/) - TailwindCSS用フレームワーク
 [スライド](https://github.com/NT25-Graduation-Work/report.github.io)
 ├── [`Marp`](https://marp.app) - Markdownでスライド生成
-├── `Github Pages`
-└── [`Github Actions`](https://docs.github.com/ja/actions)
+└── `Github Pages`
 
 ---
 
@@ -270,39 +199,4 @@ header: 採用技術
     "node": "16.18.1",
     "yarn": "1.22.19"
   }
-```
----
-
-# 今回のスライドの解説
-- テーマは[Academic](https://zenn.dev/hellorusk/articles/4edf3920dd1a35)をベースに見やすいように改善
-    - ダークテーマでなにが見やすいかを考えたときに某SNSが浮かんだ
-- 間違っている箇所をissueで管理
-- ローカルではなく、出先でもブラウザのみで解決できるように
-    - [Codespaces](https://github.co.jp/features/codespaces)を使用することでiPadからでも即座に編集
-    - iPadでNode.jsを動かすのは(不可能ではない)現実的でない
-        - push次第GitHub Actionsで自動的に変更を反映
-
----
-```yaml
-name: Publish GitHub Pages
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Convert Markdown into HTML and PDF
-        uses: KoharaKazuya/marp-cli-action@v2
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          exclude_assets: '.github,.gitignore,**.md,**.json,readme.html,**.pdf,**.lock,**.log'
 ```
