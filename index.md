@@ -47,6 +47,15 @@ header: 先行開発(Slack Alternative)
 
 ---
 
+# 機能概要
+- チャット
+- 一時的なアカウント
+    - 認証を実装していない
+    - SQLiteなど
+
+
+---
+
 # 実装
 ## バックエンド
 - Socket.IO
@@ -57,17 +66,18 @@ header: 先行開発(Slack Alternative)
 ---
 
 # バックエンド
-
+- SocketIO
+    - WebScoketを手軽に扱う以上は必要
+おかげでバックエンド側は61行と非常に少ないコードで動作している
+メンテナンス性も細かく重視しなくてよい
+https://github.com/NT25-Graduation-Work/chat-app-server/blob/master/server.js
 
 
 ---
 
 # ChatworkやSlackが抱える問題
-- フリープランの全体的な制限(Slack)
-- それに加え、一定期間経過するとログが残らない(Chatwork)
-- 広告やメールへの通知、そもそもの機能不足などの問題
-- フリープランの商用利用におけるライセンスなど
-- 後にも出てくる料金の負担
+
+
 
 ---
 
