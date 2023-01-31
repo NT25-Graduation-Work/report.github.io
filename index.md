@@ -21,7 +21,7 @@ paginate: true
 ---
 <!--
 _class: lead
-header: 先行開発(Slack Alternative)
+_header: 先行開発(Slack Alternative)
 -->
 # Slackのオープンソースな代替
 
@@ -32,8 +32,6 @@ header: 先行開発(Slack Alternative)
 | [![traPtitech/traQ - GitHub](https://gh-card.dev/repos/traPtitech/traQ.svg)](https://github.com/traPtitech/traQ)                                        | [![fosscord/fosscord - GitHub](https://gh-card.dev/repos/fosscord/fosscord.svg)](https://github.com/fosscord/fosscord)                | 
 
 ---
-
-<!-- header: Why -->
 
 # なぜ作ろうとしたか
 
@@ -46,7 +44,7 @@ header: 先行開発(Slack Alternative)
 7. 料金体系などの問題
 
 ---
-
+<!--_header: 機能 -->
 # 機能概要
 - チャット
 - 一時的なアカウント
@@ -55,6 +53,7 @@ header: 先行開発(Slack Alternative)
 
 
 ---
+<!-- header: 技術スタック -->
 
 # 実装
 ## バックエンド
@@ -63,39 +62,54 @@ header: 先行開発(Slack Alternative)
 - React
 - TailwindCSS
 - daisyUI
+
 ---
 
 # バックエンド
 - SocketIO
     - WebScoketを手軽に扱う以上は必要
+    - 導入も簡単
+
 おかげでバックエンド側は61行と非常に少ないコードで動作している
-メンテナンス性も細かく重視しなくてよい
-https://github.com/NT25-Graduation-Work/chat-app-server/blob/master/server.js
+メンテナンス性も細かく重視する必要がない ([GitHub](https://github.com/NT25-Graduation-Work/chat-app-server/blob/master/server.js))
 
+![center h:150](./images/serverjs.png)
+
+---
+# なぜ
+
+- 安定している
+- 採用実績が多い
+- Node.JSから採用するには無難
+- 動作が軽量
+- 秘匿性が高い
 
 ---
 
-# ChatworkやSlackが抱える問題
+# フロントエンド
+- React
+    - 無難なフロントエンド
+    - Next.jsではない理由
+        - jsx記法がネック
+        - Next.js13での破壊的変更
 
-
+- TailwindCSS
+    - いわずもがな知られたCSSフレームワーク
+    - コーディングのしやすさを重視
+        - カスタマイズ性が豊富
 
 ---
 
-# 学内で保守できる環境がある
-- AWSが比較的自由に使える環境がある
-- OSSなのでオンプレミスで使うことも可能
-- OSSかつ学生のリソースでも可能
-- 派生のインスタンスなど
-- Webサービスのためオンプレミスとは違い保守が楽
+- daisyUI
+    - TailwindCSS用のフレームワーク
+    - Tailwindの可読性の欠点を改善できる
+        - テーマなどで細かく悩む必要性が少ない
+    - Tailwindの良い点が殺されていない
+    - 後々のテーマ切り替えの機能などの実装がしやすい
 
 ---
 
-# プライベート端末で使用する
-- 教員によっていれるソフトウェアがバラバラのため複数必要
-- UIや操作性の一貫性が取れない
-- ブラウザからのアクセスができること(PWAやレスポンシブ対応)
-    - ネイティブアプリは本末転倒
-- 通信環境に限らず軽快な動作が必要
+<script src="https://gist.github.com/Katsuyuki-Karasawa/982137ad804ac7119ed47ee46999cf1a.js"></script>
 
 ---
 
