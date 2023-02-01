@@ -54,7 +54,7 @@ _header: 先行開発(Slack Alternative)
 - 軽量
 - 複数言語対応(react-i18next)
 - テーマ切替
-    - 後々
+    - 
 
 ---
 <!-- header: 技術スタック -->
