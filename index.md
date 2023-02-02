@@ -20,7 +20,9 @@ K021C1286/小出 佑希
 
 ---
 <!-- _header: 動作デモ-->
-![center h:650](./images/qrcode_chat.nt25-chat.net.png)
+URL: https://chat.nt25-chat.net  
+
+![center h:525](./images/qrcode_chat.nt25-chat.net.png)
 
 ---
 
@@ -67,6 +69,7 @@ K021C1286/小出 佑希
 
 おかげでバックエンド側は61行と非常に少ないコードで動作している
 メンテナンス性も細かく重視する必要がない ([GitHub](https://github.com/NT25-Graduation-Work/chat-app-server/blob/master/server.js))
+ただ、認証などの細かい実装もできていないので方針がブレている
 
 ![center h:150](./images/serverjs.png)
 
@@ -158,7 +161,33 @@ K021C1286/小出 佑希
 
 
 ---
+<!--header: これから -->
+# 今後
+- モバイル端末のUI改善
+    - デスクトップ前提になっていて、レスポンシブ以外になにもできていない
+    - React + Tailwindなのでそこまで難易度は高くない
+- PWA対応
+    - 比較的すぐにできる
+    - これをするためにも、モバイルのUI改善は必要
+- ファイルアップロードへの対応
+    - AWS CloudFlontなどのCDNを採用
+    - キャッシュなども積極的に採用したい
 
+---
+- Denoへの対応
+    - 今後はNode.jsよりDenoが流行ると考える
+    - そのためにも早い段階で対応したい
+    - Aleph.jsなど
+
+- 個人的にメンテナンスする
+    - オープンソースなのでこれを機に今後もこのメンバーで好きなタイミングで改善したい
+- 他のCSSも視野に入れる
+    - MaterialUI
+    - ChakraUI
+    - Mantine UI
+
+---
+<!-- _header: まとめ -->
 # 採用技術
 
 [server](https://github.com/NT25-Graduation-Work/chat-app-server)
