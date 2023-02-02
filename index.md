@@ -9,27 +9,18 @@ paginate: true
 # 学内チャットツール
 ## NT25-A 6班
 
-1. K021C1258/阿部 拓海  
-2. K021C1260/唐澤 克幸  
-3. K021C1252/松本 智紀  
-4. K021C1259/大槻 諒
-5. K021C1248/加藤 好太  
-6. K021C1286/小出 佑希  
+K021C1258/阿部 拓海  
+K021C1260/唐澤 克幸  
+K021C1252/松本 智紀  
+K021C1259/大槻 諒
+K021C1248/加藤 好太  
+K021C1286/小出 佑希  
 
-![bg contain opacity:50%](https://github.com/marp-team/marp/raw/main/marp-dark.png)
+![bg contain opacity:20%](https://github.com/marp-team/marp/raw/main/marp-dark.png)
 
 ---
-<!--
-_class: lead
-_header: 先行開発(Slack Alternative)
--->
-# Slackのオープンソースな代替
-
-|                                                                                                                                                         |                                                                                                                                       | 
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------- | 
-| [![vector-im/element-web - GitHub](https://gh-card.dev/repos/vector-im/element-web.svg#center)](https://github.com/vector-im/element-web)               | [![zulip/zulip - GitHub](https://gh-card.dev/repos/zulip/zulip.svg)](https://github.com/zulip/zulip)                                  | 
-| [![mattermost/mattermost-server - GitHub](https://gh-card.dev/repos/mattermost/mattermost-server.svg)](https://github.com/mattermost/mattermost-server) | [![RocketChat/Rocket.Chat - GitHub](https://gh-card.dev/repos/RocketChat/Rocket.Chat.svg)](https://github.com/RocketChat/Rocket.Chat) | 
-| [![traPtitech/traQ - GitHub](https://gh-card.dev/repos/traPtitech/traQ.svg)](https://github.com/traPtitech/traQ)                                        | [![fosscord/fosscord - GitHub](https://gh-card.dev/repos/fosscord/fosscord.svg)](https://github.com/fosscord/fosscord)                | 
+<!-- _header: 動作デモ-->
+![center h:650](./images/qrcode_chat.nt25-chat.net.png)
 
 ---
 
@@ -48,13 +39,12 @@ _header: 先行開発(Slack Alternative)
 # 機能概要
 - チャット
 - 一時的なアカウント
-    - 認証を実装していない
-        - 後々個人プロジェクトとして進める
+    - 認証は未実装
 - すべてのコンポーネントがオープンソース
 - 軽量
 - 複数言語対応(react-i18next)
 - テーマ切替
-    - 後々
+    - 現在は未実装
 
 ---
 <!-- header: 技術スタック -->
@@ -137,7 +127,7 @@ _header: 先行開発(Slack Alternative)
 - i18n
     - 国際化に対応
     - react-18nextを採用
-        - 翻訳する対象は多くはないので後々
+        - 翻訳する対象は多くはない
 - コードの最適化
     - 冗長なコードを修正
 <!-- 実際に動かしておく -->
@@ -167,10 +157,6 @@ _header: 先行開発(Slack Alternative)
 
 
 ---
-# 実際に動かしてみる
-
-
----
 
 # 採用技術
 
@@ -185,18 +171,3 @@ _header: 先行開発(Slack Alternative)
 ├── [`Marp`](https://marp.app) - Markdownでスライド生成
 └── `Github Pages`
 
----
-
-<!-- header: その他 -->
-# Node.jsのバージョン管理
-- Nodeのバージョンが変化するだけでもかなり動作確認に苦労する
-    - 動いたバージョンで固定すればよいのでは?
-    - 固定するのはなにかないか
-        - [Volta](https://volta.sh/)があった `volta pin`というコマンドで固定できる
-        - Voltaを使用していれば自動的にダウンロード&インストールし、固定される
-```json
-  "volta": {
-    "node": "16.18.1",
-    "yarn": "1.22.19"
-  }
-```
